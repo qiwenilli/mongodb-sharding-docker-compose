@@ -93,6 +93,7 @@ services:
       - "27017"
     networks:
       - "mongobridge"
+
   mongosrouter2:
     container_name: mongosrouter2
     hostname: mongosrouter2
@@ -108,6 +109,7 @@ services:
       - "27017"
     networks:
       - "mongobridge"
+
 networks:
   mongobridge:
     driver: bridge

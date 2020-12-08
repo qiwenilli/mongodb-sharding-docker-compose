@@ -38,7 +38,8 @@ members: [{ _id : 0, host : \"${shard3_name}\" }]})' | mongo"
 echo "Map Shard replica set to its associated members with rs.initiate..."
 
 
-sleep 5
+sleep 20
+# 如果以下执行失败，可单独再执行一遍
 
 sudo docker exec -it ${mongosRouter1_name} bash -c "echo 'sh.addShard(\"mongoreplicaset1shard1/mongoshard1:27017\")' | mongo" 
 sudo docker exec -it ${mongosRouter1_name} bash -c "echo 'sh.addShard(\"mongoreplicaset1shard2/mongoshard2:27017\")' | mongo" 
